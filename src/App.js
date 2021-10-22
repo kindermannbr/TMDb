@@ -1,5 +1,3 @@
-//import './App.css'
-
 const url = 'http://localhost:8000/';
 
 async function getContent(){
