@@ -30,9 +30,9 @@ function showApiData(movies){
         <div className="title">
             ${movie.original_title}
         </div>
-        <div className="title">
+        <div className="date">
             ${movie.release_date}
-        </div>`      
+        </div>`
         
         
     }
