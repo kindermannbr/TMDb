@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+const url = 'http://localhost:8000/';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+async function getContent(){
+    try {
+        
+         fetch(url)
+        .then( (res) => res.json() )
+        .then( (json) => { 
+            
+            showApiData(json.results);
+            //results é o array com os dados, para serem usados dentro da função showApiData
+        })
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-export default App;
+getContent();
+
+
+function showApiData(movies){
+    let output = '';
+
+    for(let movie of movies){
+        output += `<img src=https://image.tmdb.org/t/p/w300${movie.poster_path} />`
+        
+    }
+    document.body.innerHTML = output ;
+}
