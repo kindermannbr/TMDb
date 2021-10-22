@@ -1,3 +1,5 @@
+//import './App.css'
+
 const url = 'http://localhost:8000/';
 
 async function getContent(){
@@ -23,7 +25,17 @@ function showApiData(movies){
     let output = '';
 
     for(let movie of movies){
-        output += `<img src=https://image.tmdb.org/t/p/w300${movie.poster_path} />`
+        output += 
+        `<div className="image">
+            <img src=https://image.tmdb.org/t/p/w300${movie.poster_path} />
+        </div>
+        <div className="title">
+            ${movie.original_title}
+        </div>
+        <div className="title">
+            ${movie.release_date}
+        </div>`      
+        
         
     }
     document.body.innerHTML = output ;
