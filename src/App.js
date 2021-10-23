@@ -24,13 +24,11 @@ function showApiData(movies){
 
     for(let movie of movies){
         output += 
-        `<div className="image">
+        `<div className="data">
             <img src=https://image.tmdb.org/t/p/w300${movie.poster_path} />
-        </div>
-        <div className="title">
-            ${movie.original_title}
-        </div>
-        <div className="date">
+
+            <h3>${movie.original_title}</h3>
+
             ${movie.release_date}
         </div>`
         
